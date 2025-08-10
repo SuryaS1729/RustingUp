@@ -91,3 +91,14 @@
 //         }
 //     };
 // }
+
+// error handling in rust
+// use std::fs;
+
+// fn main() {
+//     let contents = fs::read_to_string("hello.txt");
+//     match contents {
+//         Ok(value) => println!("Result: {}", value),
+//         Err(e) => println!("Error: {}", e),
+//     }
+// }
