@@ -102,3 +102,23 @@
 //         Err(e) => println!("Error: {}", e),
 //     }
 // }
+
+//option Enum in Rust
+
+fn main() {
+    let ans = find_first_a(String::from("sahithi"));
+
+    match ans {
+        Some(index) => println!("Found 'a' at index: {}", index),
+        None => println!("No 'a' found in the string"),
+    }
+}
+
+fn find_first_a(s: String) -> Option<usize> {
+    for (index, c) in s.chars().enumerate() {
+        if c == 'a' {
+            return Some(index);
+        }
+    }
+    None
+}
