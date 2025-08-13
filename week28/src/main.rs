@@ -40,3 +40,23 @@
 // //so rust allows us to run those operations
 
 //Generics over Structs
+#[derive(Clone, Copy)]
+struct Rect<T> {
+    width: T,
+    height: T,
+}
+
+impl<T: std::ops::Mul<Output = T> + Copy> Rect<T> {
+    fn area(&self) -> T {
+        return self.width * self.height;
+    }
+}
+fn main() {
+    let r1 = Rect {
+        width: 10.0,
+        height: 102.0,
+    };
+
+    let area = r1.area();
+    println!("{}", area)
+}
