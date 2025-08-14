@@ -26,8 +26,8 @@
 
 // procedural macros are used to write custom derive traits, attribute-like macros, and function-like macros
 //
-
-#[derive(Debug, Display)]
+//1. Custom derive Macros
+#[derive(Debug)]
 struct User {
     name: String,
     age: u32,
@@ -42,3 +42,14 @@ fn main() {
     // print!("{}", u); // this will not work as User does not implement the Display trait
     print!("{:?}", u); // this will work as Userdoes not implement the Debug trait, will work when we add #[derive(Debug)]
 }
+
+// 2. Attribute-like Macros
+
+// #[route("GET")] //<- this is a custom attribute-like macro
+// fn home() {
+//     println!("Welcome to home page")
+// }
+
+//annotations work at run time, macros work at compile time
+
+//implementing macros, how to use them, instead of the internals
