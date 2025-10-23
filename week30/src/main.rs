@@ -67,4 +67,7 @@ fn main() {
         Ok(_) => print!("{:?}", v),
         Err(_) => print!("Error occurred during serialization"),
     }
+    let user = User::try_from_slice(&v).unwrap();
+
+    print!("{}", user.username)
 }
