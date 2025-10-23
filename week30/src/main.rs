@@ -53,26 +53,18 @@ struct User {
     password: String,
 }
 
-// fn main() {
-//     let u: User = User {
-//         username: String::from("Saaket"),
-//         password: String::from("sahithi"),
-//     };
-
-//     let mut v: Vec<u8> = Vec::new();
-
-//     let ans = u.serialize(&mut v);
-
-//     match ans {
-//         Ok(_) => print!("{:?}", v),
-//         Err(_) => print!("Error occurred during serialization"),
-//     }
-// }
-//
-//
 fn main() {
-    let u = User {
-        username: String::from("Saaket"),
-        password: String::from("sahithi"),
+    let u: User = User {
+        username: String::from("Harkirtat"),
+        password: String::from("123123"),
     };
+
+    let mut v: Vec<u8> = Vec::new();
+
+    let ans = u.serialize(&mut v);
+
+    match ans {
+        Ok(_) => print!("{:?}", v),
+        Err(_) => print!("Error occurred during serialization"),
+    }
 }
