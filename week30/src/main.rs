@@ -55,7 +55,7 @@ struct User {
 
 fn main() {
     let u: User = User {
-        username: String::from("Harkirtat"),
+        username: String::from("Sahithi"),
         password: String::from("123123"),
     };
 

@@ -1,3 +1,10 @@
 # Ignore target folders from all Rust sub-projects
 **/target/
 **/Cargo.lock
+/node_modules/
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.tmp
+*.bak
