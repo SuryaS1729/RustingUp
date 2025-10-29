@@ -44,30 +44,64 @@
 //
 //
 
-use borsh::{BorshDeserialize, BorshSerialize};
+// use borsh::{BorshDeserialize, BorshSerialize};
 
-#[derive(BorshSerialize, BorshDeserialize, Debug, Clone)]
+// #[derive(BorshSerialize, BorshDeserialize, Debug, Clone)]
 
-struct User {
-    username: String,
-    password: String,
+// struct User {
+//     username: String,
+//     password: String,
+// }
+
+// fn main() {
+//     let u: User = User {
+//         username: String::from("Sahithi"),
+//         password: String::from("123123"),
+//     };
+
+//     let mut v: Vec<u8> = Vec::new();
+
+//     let ans = u.serialize(&mut v);
+
+//     match ans {
+//         Ok(_) => print!("{:?}", v),
+//         Err(_) => print!("Error occurred during serialization"),
+//     }
+//     let user = User::try_from_slice(&v).unwrap();
+
+//     print!("{}", user.username)
+// }
+
+//lifetimes
+
+// fn main() {
+//     let str1 = String::from("surya saaket");
+//     let ans;
+//     {
+//         let str2 = String::from("hello world");
+//         ans = longest_string(&str1, &str2);
+//     }
+
+//     println!("{}", ans)
+// }
+
+// fn longest_string<'a, 'b>(s1: &'a String, s2: &'a String) -> &'a String {
+//     if s1.len() > s2.len() {
+//         return &s1;
+//     } else {
+//         return &s2;
+//     }
+// }
+//
+//
+fn choose<'a, 'b>(a: &'a str, b: &'a str, use_a: bool) -> &'a str {
+    if use_a { a } else { b }
 }
 
 fn main() {
-    let u: User = User {
-        username: String::from("Sahithi"),
-        password: String::from("123123"),
-    };
+    let string1 = String::from("Hello, world!");
+    let string2 = String::from("Hi!");
 
-    let mut v: Vec<u8> = Vec::new();
-
-    let ans = u.serialize(&mut v);
-
-    match ans {
-        Ok(_) => print!("{:?}", v),
-        Err(_) => print!("Error occurred during serialization"),
-    }
-    let user = User::try_from_slice(&v).unwrap();
-
-    print!("{}", user.username)
+    let result = choose(&string1, &string2, true);
+    println!("Chosen string: {}", result);
 }
